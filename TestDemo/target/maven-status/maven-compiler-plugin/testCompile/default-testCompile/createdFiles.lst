@@ -1,0 +1,7 @@
+shopping\core\ElementRef.class
+shopping\steps\LoginStepDef.class
+shopping\core\EndPoint.class
+shopping\core\BasePage.class
+shopping\TestSuite.class
+shopping\pages\LoginPage.class
+shopping\pages\HomePage.class
