@@ -21,6 +21,8 @@ public class BasePage extends PageObject {
         element.click();
     }
 
+    public void getTextElement(WebElementFacade element){element.getText();}
+
     /**
      * This is method to send key for Element.
      *

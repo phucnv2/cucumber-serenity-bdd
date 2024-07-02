@@ -5,6 +5,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import shopping.core.BasePage;
 import shopping.pages.HomePage;
 import shopping.pages.LoginPage;
@@ -73,6 +74,10 @@ public class LoginStepDef {
    * AnnotationLocation. for Customer Demo Feature TestCase.
    * For Logout button is displayed
    */
+  @Then("Verify error (.*) login")
+  public void verifyErrorMessageFail (final String text) {
+    loginPage.verifyTextErrorMessage(text);
+  }
   @And("Verify Logout is displayed in Homepage")
   public void verifyLogoutIsDisplayedInHomepage() {
     homePage.isLogoutDisplayed();

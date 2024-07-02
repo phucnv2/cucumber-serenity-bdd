@@ -48,13 +48,18 @@ public class LoginPage extends BasePage {
    * Verify "@2022"
    */
 
-  @FindBy(xpath = "//div[@class='alert alert-danger text-center']")
+//  @FindBy(xpath = "//div[@class='alert alert-danger text-center']")
+//  private WebElementFacade textErrorNulll;
+  @FindBy(xpath = "//div[@class='text-center alert alert-danger']")
   private WebElementFacade textErrorNull;
-  @FindBy()
-  private WebElementFacade textErrorPassword;
   public void verifyTextInBottom() {
     waitForElemenetVisible(textInBottom);
     Assert.assertTrue("@2022", textInBottom.isDisplayed());
+  }
+  public void verifyTextErrorMessage( String text) {
+    waitForElemenetVisible(textErrorNull);
+    textErrorNull.getText();
+    Assert.assertEquals("Sai chỗ rồi",textErrorNull.getText(),text);
   }
 
   /**
@@ -94,6 +99,9 @@ public class LoginPage extends BasePage {
     }
   }
 
+//  public void isMessageError(String text){
+//    getTextElement();
+//  }
   public void login() {
     this.open();
     this.inputToUsername(EndPoint.USERNAME);
